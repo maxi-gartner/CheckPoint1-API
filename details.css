@@ -1,0 +1,22 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: rgb(243, 204, 156);
+}
+.cards{
+    display: flex;
+
+    justify-content: center;
+}
+.card{
+    margin: 2em;
+    text-align: center;
+    width: 30em;
+    background-color: cadetblue;
+    color: white;
+}
+.btn{
+    font-size: 1.3em;
+}
