@@ -5,7 +5,7 @@ console.log("cards",cards)
 
 const API_URL = "https://jsonplaceholder.typicode.com/users";
 
-const getUser = async() => {
+/* const getUser = async() => {
     const getFetch = await fetch(API_URL)
     const getData = await getFetch.json()
     //console.log("getData",getData)
@@ -14,7 +14,18 @@ const getUser = async() => {
 }
 getUser()
 
-console.log("hasta aca funciona")
+console.log("hasta aca funciona") */
+const getUser = async() => {
+    try{
+        const getDataAPI = await axios.get(API_URL)
+        const getData = getDataAPI.data
+        console.log(getData)
+        addCards(getData)
+    }catch (error){
+        console.log("error", error)
+    }
+}
+getUser()
 
 /**
  * @returns crea las cards

@@ -6,10 +6,14 @@ console.log("cards",cards)
 const API_URL = "https://jsonplaceholder.typicode.com/users";
 
 const getUser = async() => {
-    const getFetch = await fetch(API_URL)
-    const getData = await getFetch.json()
-    //console.log("getData",getData)
-    addCards(getData)
+    try{
+        const getDataAPI = await axios.get(API_URL)
+        const getData = getDataAPI.data
+        console.log(getData)
+        addCards(getData)
+    }catch (error){
+        console.log("error: ", error)
+    }
 }
 getUser()
 
